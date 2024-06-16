@@ -1,8 +1,10 @@
 # Desafio Sistema de Temperatura por CEP
 
-Repositório para o desafio do sistema de temperatura por CEP da pós de Golang
+Este repositório foi criado exclusivamente para hospedar o código do desenvolvimento do Desfio do Sistema de temperatura por CEP da da **Pós Go Expert**, ministrado pela **Full Cycle**.
 
 ## Descrição do Desafio
+
+A seguir estão os dados fornecidos na descrição do desafio.
 
 ### Objetivo
 
@@ -11,7 +13,7 @@ Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o 
 ### Requisitos
 
 - O sistema deve receber um CEP válido de 8 digitos
-- O sistema deve realizar a pesquisa do CEP e encontrar o nome da localização, a partir disso, deverá etornar as temperaturas e formata-lás em: Celsius, Fahrenheit, Kelvin.
+- O sistema deve realizar a pesquisa do CEP e encontrar o nome da localização, a partir disso, deverá retornar as temperaturas e formata-lás em: Celsius, Fahrenheit, Kelvin.
 - O sistema deve responder adequadamente nos seguintes cenários:
     - Em caso de sucesso:
         - Código HTTP: 200
@@ -28,8 +30,8 @@ Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o 
 
 - Utilize a API viaCEP (ou similar) para ncontrar a localização que deseja consultar  temperatura: https://viacep.com.br/
 - Utilize a API WeatherAPI (ou similar) para onsultar as temperaturas desejadas: https://ww.weatherapi.com/
-- Para realizar a conversão de Celsius para ahrenheit, utilize a seguinte fórmula: F = C  1,8 + 32
-- Para realizar a conversão de Celsius para elvin, utilize a seguinte fórmula: K = C + 73
+- Para realizar a conversão de Celsius para Fahrenheit, utilize a seguinte fórmula: F = C * 1,8 + 32
+- Para realizar a conversão de Celsius para Kelvin, utilize a seguinte fórmula: K = C + 273
     - Sendo F = Fahrenheit
     - Sendo C = Celsius
     - Sendo K = Kelvin
