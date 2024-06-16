@@ -21,7 +21,7 @@ Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o 
     - Em caso de falha, caso o CEP não seja válido (com formato correto):
         - Código HTTP: 422
         - Mensagem: invalid zipcode
-    ​​​- Em caso de falha, caso o CEP não seja encontrado:
+    - Em caso de falha, caso o CEP não seja encontrado:
         - Código HTTP: 404
         - Mensagem: can not find zipcode
 - Deverá ser realizado o deploy no Google Cloud Run.
