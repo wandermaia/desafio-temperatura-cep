@@ -28,8 +28,8 @@ Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o 
 
 ### Dicas
 
-- Utilize a API viaCEP (ou similar) para ncontrar a localização que deseja consultar  temperatura: https://viacep.com.br/
-- Utilize a API WeatherAPI (ou similar) para onsultar as temperaturas desejadas: https://ww.weatherapi.com/
+- Utilize a API viaCEP (ou similar) para encontrar a localização que deseja consultar temperatura: https://viacep.com.br/
+- Utilize a API WeatherAPI (ou similar) para consultar as temperaturas desejadas: https://www.weatherapi.com/
 - Para realizar a conversão de Celsius para Fahrenheit, utilize a seguinte fórmula: F = C * 1,8 + 32
 - Para realizar a conversão de Celsius para Kelvin, utilize a seguinte fórmula: K = C + 273
     - Sendo F = Fahrenheit
