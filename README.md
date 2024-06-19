@@ -116,9 +116,9 @@ Com isso, o webserver será iniciado na porta 8080. Para realizar testes no cont
 Para o desenvolvimento do projeto, foi criada uma conta gratuíta no Google Cloud e utilizado o projeto default. Abaixo segue o print do deploy do projeto já em execução no Google Cloud Run:
 
 
-[gcp-service.png][/.img/gcp-service.png]
+![gcp-service.png](/.img/gcp-service.png)
 
-![http.png](/.img/http.png)
+
 
 
 
