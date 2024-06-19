@@ -119,9 +119,26 @@ Para o desenvolvimento do projeto, foi criada uma conta gratuíta no Google Clou
 ![gcp-service.png](/.img/gcp-service.png)
 
 
+Para acessar o projeto, pode ser utilizado o link https://desafio-temperatura-cep-u6wtscwu3a-uc.a.run.app . Abaixo segue o print de alguns testes utilizando o curl:
+
+
+![gcp-test.png](/.img/gcp-test.png)
+
+Os comandos utilizados para o teste acima estão abaixo:
 
 
 
+```bash
 
+# Cep válido
+curl -i https://desafio-temperatura-cep-u6wtscwu3a-uc.a.run.app/32450000
+
+# Cep inválido
+curl -i https://desafio-temperatura-cep-u6wtscwu3a-uc.a.run.app/324500000
+
+# Cep com formato válido, mas inexistente
+curl -i https://desafio-temperatura-cep-u6wtscwu3a-uc.a.run.app/000000000
+
+```
 
 
