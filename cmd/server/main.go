@@ -14,8 +14,7 @@ func main() {
 	router.Use(middleware.Logger)
 	router.Use(middleware.Recoverer)
 	router.Get("/{cep}", handlers.BuscaTemperaturaHandler)
-	//router.Get("/", handlers.BuscaCepHandler)
 
-	log.Println("Servidor iniciado!")
-	http.ListenAndServe(":8000", router)
+	log.Println("Servidor iniciado na porta 8080!")
+	http.ListenAndServe(":8080", router)
 }

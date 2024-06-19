@@ -44,12 +44,84 @@ Desenvolver um sistema em Go que receba um CEP, identifica a cidade e retorna o 
 - Deploy realizado no Google Cloud Run (free tier) e endereço ativo para ser acessado.
 
 
-## Anotações
+## Execução do Desafio
 
-Inicialização do módulo.
+### Testes do Webserver
+
+Para a realização dos testes, basta executar o seguinte comando `go test ./internal/infra/webserver/handlers -v` a partir da raiz do repositório. Abaixo segue o exemplo da execução:
+
+
 
 ```bash
 
-go mod init github.com/wandermaia/desafio-temperatura-cep
+wander@bsnote283:~/desafio-temperatura-cep$ go test ./internal/infra/webserver/handlers -v
+=== RUN   TestBuscaTemperaturaHandlerOk
+--- PASS: TestBuscaTemperaturaHandlerOk (1.11s)
+=== RUN   TestBuscaTemperaturaHandlerOkCaractereEspecial
+--- PASS: TestBuscaTemperaturaHandlerOkCaractereEspecial (0.72s)
+=== RUN   TestBuscaTemperaturaHandlerCepInvalido
+2024/06/18 21:45:09 invalid zipcode: 324500000
+--- PASS: TestBuscaTemperaturaHandlerCepInvalido (0.00s)
+=== RUN   TestBuscaTemperaturaHandlerCepNaoEncontrado
+2024/06/18 21:45:09 can not find zipcode: 00000000
+--- PASS: TestBuscaTemperaturaHandlerCepNaoEncontrado (0.20s)
+PASS
+ok  	github.com/wandermaia/desafio-temperatura-cep/internal/infra/webserver/handlers	(cached)
+wander@bsnote283:~/desafio-temperatura-cep$ 
+
 
 ```
+
+Também foi criado o arquivo `api/apis_temperatura_cep.http` para que os endpoints possam ser testados diretamente a partir do VScode. Para realizar o teste utilizando o arquivo, basta executar o comando abaixo para inicializar o webserver e, em seguida utilizar os endpoints cadastrados:
+
+
+```bash
+
+wander@bsnote283:~/desafio-temperatura-cep$ go mod tidy
+wander@bsnote283:~/desafio-temperatura-cep$ 
+wander@bsnote283:~/desafio-temperatura-cep$ go run cmd/server/main.go 
+2024/06/18 22:32:45 Servidor iniciado na porta 8080!
+
+
+```
+
+Ao executar esses comandos, os módulos serão baixados e o webserver será inciado.
+
+
+### Criação do Container
+
+
+Para gerar um container da aplicação, basta executar os seguintes comandos a partir da raiz do projeto:
+
+
+```bash
+
+# Gerar uma nova imagem
+docker build -t wandermaia/desafio-temperatura-cep:latest -f Dockerfile.prod .
+
+# Verificar a imagem gerada
+docker images | grep desafio-temperatura-cep
+
+# Executar o container
+docker run --rm -p 8080:8080 wandermaia/desafio-temperatura-cep:latest
+
+```
+
+Com isso, o webserver será iniciado na porta 8080. Para realizar testes no container, o próprio arquivo `api/apis_temperatura_cep.http` pode ser utilizado.
+
+
+### Google Cloud Run
+
+
+Para o desenvolvimento do projeto, foi criada uma conta gratuíta no Google Cloud e utilizado o projeto default. Abaixo segue o print do deploy do projeto já em execução no Google Cloud Run:
+
+
+[gcp-service.png][/.img/gcp-service.png]
+
+![http.png](/.img/http.png)
+
+
+
+
+
+
