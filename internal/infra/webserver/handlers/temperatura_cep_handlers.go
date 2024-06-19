@@ -26,7 +26,6 @@ type ViaCEP struct {
 	Erro        bool   `json:"erro"`
 }
 
-// { "temp_C": 28.5, "temp_F": 28.5, "temp_K": 28.5 }
 // Struct que será utilizada para formar a resposta com o valor das temperaturas
 type TemperaturaCidade struct {
 	TempC float64 `json:"temp_C"`
