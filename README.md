@@ -97,7 +97,7 @@ Para gerar um container da aplicação, basta executar os seguintes comandos a p
 ```bash
 
 # Gerar uma nova imagem
-docker build -t wandermaia/desafio-temperatura-cep:latest -f Dockerfile.prod .
+docker build -t wandermaia/desafio-temperatura-cep:latest -f Dockerfile .
 
 # Verificar a imagem gerada
 docker images | grep desafio-temperatura-cep
@@ -108,6 +108,25 @@ docker run --rm -p 8080:8080 wandermaia/desafio-temperatura-cep:latest
 ```
 
 Com isso, o webserver será iniciado na porta 8080. Para realizar testes no container, o próprio arquivo `api/apis_temperatura_cep.http` pode ser utilizado.
+
+Além disso, foi criado também um arquivo docker-compose para inciar o processo. O mesmo pode ser executado através dos comandos:
+
+
+
+```bash
+
+# Iniciar o container utilizando o arquivo docker-compose.yaml
+docker-compose up -d
+
+# Verificando o container em execução
+docker ps
+
+```
+
+Desta forma o webserver também será iniciado na porta 8080. Para realizar testes no container, novamente podemos utilizar o próprio arquivo `api/apis_temperatura_cep.http`.
+
+
+docker-compose up -d
 
 
 ### Google Cloud Run
